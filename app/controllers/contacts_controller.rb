@@ -8,7 +8,7 @@ class ContactsController < ApplicationController
     #更に修正、メソッドにする→Contact.create(params.require(:contact).permit(:name, :email, :content))
     @contact = Contact.new(contact_params)
     if @contact.save
-      redirect_to new_contact_path, notice: "ブログ作成！"
+      redirect_to new_contact_path, notice: "ブログ作成しました！"
     #redirect_to new_contact_path
     else
       render :new
