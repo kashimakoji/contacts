@@ -1,5 +1,12 @@
 <h1>Ruby on Rails入門シリーズ演習1【お問い合わせ機能を実装する】</h1>
 <%= form_with(model: @contact, local: true) do |form| %>
+    <% if @contact.errors.any? %>
+        <div id="error_explanation">
+            <h2>エラーです。</h2>
+        </div>
+    <% end %>
+
+
     <div class="contact_name">
         <%= form.label :name %>
         <%= form.text_field :name %>
